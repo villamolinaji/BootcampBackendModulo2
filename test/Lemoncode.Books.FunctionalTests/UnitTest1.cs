@@ -1,12 +1,14 @@
+using System;
 using Xunit;
 
-namespace Lemoncode.Books.FunctionalTests;
-
-public class UnitTest1
+namespace Lemoncode.Books.FunctionalTests
 {
-    [Fact]
-    public void Test1()
+    public class UnitTest1
     {
+        [Fact]
+        public void Test1()
+        {
 
+        }
     }
 }
