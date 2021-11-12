@@ -12,7 +12,7 @@ namespace Lemoncode.Books.Domain.Models
         public string CountyrCode { get; set; }
 
         // navigation property
-        public List<Book> Books { get; set; } = new List<Book>();
+        public List<Book> Books { get; set; }
 
     }
 }

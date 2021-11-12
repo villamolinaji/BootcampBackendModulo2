@@ -1,4 +1,6 @@
 using Lemoncode.Books.Application;
+using Lemoncode.Books.Application.Contracts;
+using Lemoncode.Books.Application.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -30,6 +32,8 @@ namespace Lemoncode.Books.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Lemoncode.Books.WebApi", Version = "v1" });
             });
+            services.AddTransient<IAuthorService, AuthorService>();
+            services.AddTransient<IBookService, BookService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

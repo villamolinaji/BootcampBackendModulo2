@@ -11,6 +11,6 @@ namespace Lemoncode.Books.Domain.Models
         public int AuthorId { get; set; }
 
         // navigation property
-        public Author Author { get; set; } = new Author();
+        public Author Author { get; set; }
     }
 }
