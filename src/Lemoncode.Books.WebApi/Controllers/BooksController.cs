@@ -50,9 +50,20 @@ namespace Lemoncode.Books.WebApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<BookGet>> Get()
+        public ActionResult<List<BookGet>> Get(string title = null, string author = null)
         {
-            return _bookService.GetBooks();
+            if (!String.IsNullOrWhiteSpace(author))
+            {
+                return _bookService.GetBooksByTitleAndAuthorName(title, author);
+            }
+            else if (!String.IsNullOrWhiteSpace(title))
+            {
+                return _bookService.GetBooksByTitle(title);
+            }
+            else
+            {
+                return _bookService.GetBooks();
+            }
         }
     }
 }

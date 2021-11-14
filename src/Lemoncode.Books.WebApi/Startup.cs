@@ -31,7 +31,38 @@ namespace Lemoncode.Books.WebApi
             services.AddDbContext<BooksDbContext>(options => options.UseSqlServer(connectionString));
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Lemoncode.Books.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo 
+                { 
+                    Title = "Lemoncode.Books.WebApi", 
+                    Version = "v1",
+                    Description = "Lemoncode Bootcamp - Laboratorio Módulo 2",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "José Ignacio Villa"
+                    }
+                });
+                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "basic",
+                    In = ParameterLocation.Header,
+                    Description = "Basic Authorization header using the Bearer scheme."
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "basic"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
             });
             services.AddTransient<IAuthorService, AuthorService>();
             services.AddTransient<IBookService, BookService>();

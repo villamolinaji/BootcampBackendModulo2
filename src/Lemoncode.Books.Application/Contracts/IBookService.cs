@@ -9,5 +9,7 @@ namespace Lemoncode.Books.Application.Contracts
         public void UpdateBook(BookUpdate bookUpdate);
 
         public List<BookGet> GetBooks();
+        public List<BookGet> GetBooksByTitle(string title);
+        public List<BookGet> GetBooksByTitleAndAuthorName(string title, string authorName);
     }
 }

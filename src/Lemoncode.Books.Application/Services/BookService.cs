@@ -72,5 +72,40 @@ namespace Lemoncode.Books.Application.Services
 
             return booksResult;
         }
+
+        public List<BookGet> GetBooksByTitle(string title)
+        {
+            var books = _dbContext.Books
+                            .Include(b => b.Author)
+                            .Where(b => b.Title.Contains(title))
+                            .ToList();
+
+            var booksResult = new List<BookGet>();
+
+            foreach (var book in books)
+            {
+                booksResult.Add(MapUtil.MapBookToBookGet(book));
+            }
+
+            return booksResult;
+        }
+
+        public List<BookGet> GetBooksByTitleAndAuthorName(string title, string authorName)
+        {
+            var books = _dbContext.Books
+                            .Include(b => b.Author)
+                            .Where(b => b.Title.Contains(title) &&
+                                (b.Author.Name.Contains(authorName) || b.Author.LastName.Contains(authorName)))
+                            .ToList();
+
+            var booksResult = new List<BookGet>();
+
+            foreach (var book in books)
+            {
+                booksResult.Add(MapUtil.MapBookToBookGet(book));
+            }
+
+            return booksResult;
+        }
     }
 }
