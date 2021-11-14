@@ -7,13 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BB3C89AE-353
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{08BF4851-3306-4D12-9321-DB2D361E71B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lemoncode.Books.Domain", "src\Lemoncode.Books.Domain\Lemoncode.Books.Domain.csproj", "{CDA7B260-FA4B-4CB2-ACB1-8F2C514F3B68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lemoncode.Books.Domain", "src\Lemoncode.Books.Domain\Lemoncode.Books.Domain.csproj", "{CDA7B260-FA4B-4CB2-ACB1-8F2C514F3B68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lemoncode.Books.Application", "src\Lemoncode.Books.Application\Lemoncode.Books.Application.csproj", "{6DD6122F-2C4B-451E-9061-F2D2FCB3C2AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lemoncode.Books.Application", "src\Lemoncode.Books.Application\Lemoncode.Books.Application.csproj", "{6DD6122F-2C4B-451E-9061-F2D2FCB3C2AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lemoncode.Books.FunctionalTests", "test\Lemoncode.Books.FunctionalTests\Lemoncode.Books.FunctionalTests.csproj", "{3043CB84-FCDA-49CA-9D19-06B0A1D4C5D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lemoncode.Books.FunctionalTests", "test\Lemoncode.Books.FunctionalTests\Lemoncode.Books.FunctionalTests.csproj", "{3043CB84-FCDA-49CA-9D19-06B0A1D4C5D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lemoncode.Books.WebApi", "src\Lemoncode.Books.WebApi\Lemoncode.Books.WebApi.csproj", "{04DA1500-3BBB-479A-BDDB-2423116F995C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lemoncode.Books.WebApi", "src\Lemoncode.Books.WebApi\Lemoncode.Books.WebApi.csproj", "{04DA1500-3BBB-479A-BDDB-2423116F995C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lemoncode.Books.Application.UnitTests", "Lemoncode.Books.Application.UnitTests\Lemoncode.Books.Application.UnitTests.csproj", "{60676DA9-D256-4867-AB92-8E7F5D35761B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{04DA1500-3BBB-479A-BDDB-2423116F995C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04DA1500-3BBB-479A-BDDB-2423116F995C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04DA1500-3BBB-479A-BDDB-2423116F995C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60676DA9-D256-4867-AB92-8E7F5D35761B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60676DA9-D256-4867-AB92-8E7F5D35761B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60676DA9-D256-4867-AB92-8E7F5D35761B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60676DA9-D256-4867-AB92-8E7F5D35761B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{6DD6122F-2C4B-451E-9061-F2D2FCB3C2AF} = {BB3C89AE-3536-4CA3-B9DA-C3CE6CD278D0}
 		{3043CB84-FCDA-49CA-9D19-06B0A1D4C5D6} = {08BF4851-3306-4D12-9321-DB2D361E71B3}
 		{04DA1500-3BBB-479A-BDDB-2423116F995C} = {BB3C89AE-3536-4CA3-B9DA-C3CE6CD278D0}
+		{60676DA9-D256-4867-AB92-8E7F5D35761B} = {08BF4851-3306-4D12-9321-DB2D361E71B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C9698CA0-29F2-4B76-AF2D-1B9326F59CA0}

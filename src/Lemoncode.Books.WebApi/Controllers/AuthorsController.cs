@@ -1,5 +1,6 @@
 ﻿using Lemoncode.Books.Application.Contracts;
 using Lemoncode.Books.Application.Models;
+using Lemoncode.Books.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,12 @@ namespace Lemoncode.Books.WebApi.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        [HttpGet]
+        public ActionResult<Author> GetAuthor(int id)
+        {
+            return _authorService.GetAuthorById(id);
         }
     }
 }

@@ -1,6 +1,7 @@
 using Lemoncode.Books.Application;
 using Lemoncode.Books.Application.Contracts;
 using Lemoncode.Books.Application.Services;
+using Lemoncode.Books.WebApi.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -47,6 +48,8 @@ namespace Lemoncode.Books.WebApi
             }
 
             app.UseHttpsRedirection();
+
+            app.UseMiddleware<BasicAuthMiddleware>(_configuration);
 
             app.UseRouting();
 

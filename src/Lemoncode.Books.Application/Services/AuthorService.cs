@@ -1,7 +1,8 @@
 ﻿using Lemoncode.Books.Application.Contracts;
 using Lemoncode.Books.Application.Models;
 using Lemoncode.Books.Application.Utilities;
-using System;
+using Lemoncode.Books.Domain.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Lemoncode.Books.Application.Services
@@ -22,13 +23,24 @@ namespace Lemoncode.Books.Application.Services
             var authorByName = _dbContext.Authors
                                 .FirstOrDefault(a => a.LastName == author.LastName &&
                                     a.Name == author.Name);
-            if (authorByName != null)
+            /*if (authorByName != null)
             {
                 throw new InvalidOperationException($"Author {author.Name} {author.LastName} already exists.");
-            }
+            }*/
 
             _dbContext.Authors.Add(author);
-            _dbContext.SaveChanges();
-        }        
+            _dbContext.SaveChanges();            
+        }
+
+        public Author GetAuthorById(int id)
+        {
+            var author = _dbContext.Authors.FirstOrDefault(a => a.Id == id);
+            if (author == null)
+            {
+                throw new KeyNotFoundException($"Author {id} not found.");
+            }
+
+            return author;
+        }
     }
 }

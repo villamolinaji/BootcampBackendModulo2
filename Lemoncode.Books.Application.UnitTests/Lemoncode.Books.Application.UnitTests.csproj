@@ -7,20 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="AuthorControllerTests\add_author.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="AuthorControllerTests\add_author.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="6.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.12" />
-    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="5.0.12" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -33,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Lemoncode.Books.WebApi\Lemoncode.Books.WebApi.csproj" />
+    <ProjectReference Include="..\src\Lemoncode.Books.Application\Lemoncode.Books.Application.csproj" />
   </ItemGroup>
 
 </Project>
