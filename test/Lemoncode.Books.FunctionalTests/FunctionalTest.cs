@@ -24,7 +24,7 @@ namespace Lemoncode.Books.FunctionalTests
                         .UseStartup<Startup>()
                         .UseEnvironment("Test")
                         .ConfigureTestServices(ConfigureTestServices));
-
+            server.BaseAddress = new Uri("https://localhost:5001/api/");
             HttpClient = server.CreateClient();
             _serviceProvider = server.Services;
             Configuration = _serviceProvider.GetService<IConfiguration>();

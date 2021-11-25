@@ -16,6 +16,11 @@ namespace Lemoncode.Books.Application.Utilities
             };
         }
 
+        public static void MapAuthorToAuthorAdd(Author author, AuthorAdd authorAdd)
+        {
+            authorAdd.Id = author.Id;
+        }
+
         public static Book MapBookAddToBook(BookAdd bookAdd)
         {
             return new Book
@@ -25,6 +30,11 @@ namespace Lemoncode.Books.Application.Utilities
                 PublishedOn = bookAdd.PublishedOn,
                 Title = bookAdd.Title
             };
+        }
+
+        public static void MapBookToBookAdd(Book book, BookAdd bookAdd)
+        {
+            bookAdd.Id = book.Id;
         }
 
         public static Book MapBookUpdateToBook(BookUpdate bookUpdate)
@@ -46,6 +56,18 @@ namespace Lemoncode.Books.Application.Utilities
                 Description = book.Description,
                 PublishedOn = book.PublishedOn.ToString("o"),
                 AuthorFullName = $"{book.Author.Name} {book.Author.LastName}"
+            };
+        }
+
+        public static AuthorGet MapAuthorToAuthorGet(Author author)
+        {
+            return new AuthorGet
+            {
+                Id = author.Id,
+                Birth = author.Birth,
+                CountyrCode = author.CountyrCode,
+                LastName = author.LastName,
+                Name = author.Name
             };
         }
     }

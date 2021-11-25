@@ -1,13 +1,4 @@
-﻿using Lemoncode.Books.Application.Contracts;
-using Lemoncode.Books.Application.Models;
-using Lemoncode.Books.Application.Services;
-using Lemoncode.Books.Domain.Models;
-using Microsoft.EntityFrameworkCore;
-using Moq;
-using System;
-using Xunit;
-
-namespace Lemoncode.Books.Application.UnitTests.AuthoerServiceTests
+﻿namespace Lemoncode.Books.Application.UnitTests.AuthoerServiceTests
 {
     public class AddAuthorTests
     {

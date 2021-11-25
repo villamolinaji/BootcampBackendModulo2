@@ -16,7 +16,7 @@ namespace Lemoncode.Books.Application.Services
             _dbContext = dbContext;
         }
 
-        public void AddBook(BookAdd bookAdd)
+        public BookAdd AddBook(BookAdd bookAdd)
         {
             var book = MapUtil.MapBookAddToBook(bookAdd);
 
@@ -29,6 +29,10 @@ namespace Lemoncode.Books.Application.Services
 
             _dbContext.Books.Add(book);
             _dbContext.SaveChanges();
+
+            MapUtil.MapBookToBookAdd(book, bookAdd);
+
+            return bookAdd;
         }        
 
         public void UpdateBook(BookUpdate bookUpdate)

@@ -1,7 +1,6 @@
 ﻿using Lemoncode.Books.Application.Contracts;
 using Lemoncode.Books.Application.Models;
 using Lemoncode.Books.Application.Utilities;
-using Lemoncode.Books.Domain.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,7 +14,7 @@ namespace Lemoncode.Books.Application.Services
             _dbContext = dbContext;
         }
 
-        public void AddAuthor(AuthorAdd authorAdd)
+        public AuthorAdd AddAuthor(AuthorAdd authorAdd)
         {
             var author = MapUtil.MapAuthorAddToAuthor(authorAdd);
 
@@ -29,10 +28,14 @@ namespace Lemoncode.Books.Application.Services
             }*/
 
             _dbContext.Authors.Add(author);
-            _dbContext.SaveChanges();            
+            _dbContext.SaveChanges();
+            
+            MapUtil.MapAuthorToAuthorAdd(author, authorAdd);
+
+            return authorAdd;
         }
 
-        public Author GetAuthorById(int id)
+        public AuthorGet GetAuthorById(int id)
         {
             var author = _dbContext.Authors.FirstOrDefault(a => a.Id == id);
             if (author == null)
@@ -40,7 +43,7 @@ namespace Lemoncode.Books.Application.Services
                 throw new KeyNotFoundException($"Author {id} not found.");
             }
 
-            return author;
+            return MapUtil.MapAuthorToAuthorGet(author);
         }
     }
 }

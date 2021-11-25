@@ -18,12 +18,12 @@ namespace Lemoncode.Books.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddBook(BookAdd bookAdd)
+        public ActionResult<BookAdd> AddBook(BookAdd bookAdd)
         {
             try
             {
-                _bookService.AddBook(bookAdd);
-                return Ok();
+                var bookAdded = _bookService.AddBook(bookAdd);
+                return Ok(bookAdded);
             }
             catch (Exception ex)
             {
