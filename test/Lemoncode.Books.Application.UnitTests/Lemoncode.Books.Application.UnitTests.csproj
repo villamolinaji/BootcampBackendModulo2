@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Lemoncode.Books.Application\Lemoncode.Books.Application.csproj" />
+    <ProjectReference Include="..\..\src\Lemoncode.Books.Application\Lemoncode.Books.Application.csproj" />
   </ItemGroup>
 
 </Project>
